@@ -1,0 +1,32 @@
+{
+	"name": "poon-markdown",
+	"version": "1.0.0",
+	"description": "Small React markdown renderer for Poon apps",
+	"type": "module",
+	"main": "index.js",
+	"module": "index.js",
+	"exports": {
+		".": "./index.js"
+	},
+	"files": [
+		"index.js",
+		"README.md",
+		"package.json"
+	],
+	"scripts": {
+		"patch": "npm publish"
+	},
+	"keywords": [
+		"react",
+		"markdown"
+	],
+	"author": "James Loper",
+	"license": "ISC",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/lemontron/poon-markdown.git"
+	},
+	"peerDependencies": {
+		"react": "^19.0.0"
+	}
+}
