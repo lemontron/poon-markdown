@@ -62,17 +62,12 @@ const renderTable = (tableLines, index, Link) => {
 	const headerCells = splitTableRow(tableLines[0]);
 	const alignments = splitTableRow(tableLines[1]).map(parseTableAlignment);
 	const bodyRows = tableLines.slice(2).map(splitTableRow);
-	const cellStyle = (cellIndex) => {
-		const textAlign = alignments[cellIndex];
-		return textAlign ? {textAlign} : undefined;
-	};
 
 	return createElement('table', {key: `table-${index}`},
 		createElement('thead', {key: `table-${index}-head`},
 			createElement('tr', {key: `table-${index}-head-row`},
 				headerCells.map((cell, cellIndex) => createElement('th', {
 					key: `table-${index}-head-cell-${cellIndex}`,
-					style: cellStyle(cellIndex),
 				}, renderInline(cell, `table-${index}-head-${cellIndex}`, Link))),
 			),
 		),
@@ -81,7 +76,6 @@ const renderTable = (tableLines, index, Link) => {
 				key: `table-${index}-row-${rowIndex}`,
 			}, headerCells.map((_, cellIndex) => createElement('td', {
 				key: `table-${index}-row-${rowIndex}-cell-${cellIndex}`,
-				style: cellStyle(cellIndex),
 			}, renderInline(row[cellIndex] || '', `table-${index}-row-${rowIndex}-cell-${cellIndex}`, Link))))),
 		),
 	);

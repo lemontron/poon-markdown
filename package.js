@@ -5,7 +5,7 @@ Package.describe({
 });
 
 Package.onUse(api => {
-	api.use('ecmascript', 'client');
-	api.use('modules', 'client');
-	api.mainModule('index.js', 'client');
+	api.use('ecmascript');
+	api.use('modules');
+	api.mainModule('index.js');
 });
